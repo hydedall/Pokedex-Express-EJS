@@ -44,7 +44,7 @@ app.get("/" , function (req, res){
 //E
 
 //INDEX
-//creates an index page with the data from the fruits array (fruits.js)
+//creates an index page with the data from the pokedexs array (pokemon.js)
 app.get("/pokemons/new", (req, res) => {
   res.render("index.ejs", {
     pokemon: pokemons,

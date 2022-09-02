@@ -18,7 +18,7 @@
             <h2>
                 <%=pokedex[i].name%> | ID:<%=pokedex[i].id%>
             </h2>
-            <a href="/pokemons/<%=i%>"><img src="<%=pokedex[i].img%>"></a>
+            <a href="/pokemons/<%=i%>"><img src="<%=pokemons[i].img%>"></a>
             <form action="/pokemons/<%=i%>?_method=DELETE" method="POST">
                 <input type="submit" value="DELETE" />
             </form>
