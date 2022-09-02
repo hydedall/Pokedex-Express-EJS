@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
     <%- include("./partials/head.ejs") %>
-    <%- include("./partials/header.ejs") %>
+        <%- include("./partials/header.ejs") %>
+</head>
+
 <body>
-    <a href="/pokemons"><img class="arrow" src="/img/arrow.png" width="20px"></a>
     <div class="showcontainer">
         <div id="types">
-            <img id="pokemon-img-showpage" src="<%=aPokemon.img%>" width="300px" />
-            <h4><%= aPokemon.name %></h4>
-            <h4><%= aPokemon.type%></h4>
+            <h4>
+                <%= aPokemon.name %>
+            </h4>
+            <h4>
+                <%= aPokemon.type%>
+            </h4>
             <form class="button-showpage" action="/pokemons/<%= index %>/edit">
                 <input class="edit-button" type="submit" value="EDIT">
             </form>
@@ -19,13 +25,13 @@
     </div>
     <div class="showcontainer">
         <div id="stats">
-            <p>HP: <%= aPokemon.stats.hp %></p>
-            <p>Attack: <%= aPokemon.stats.attack %></p>
-            <p>Defense: <%= aPokemon.stats.defense %></p>
-            <p>Spattack: <%= aPokemon.stats.spattack %></p>
-            <p>Spdefense: <%= aPokemon.stats.spdefense %></p>
-            <p>Speed: <%= aPokemon.stats.speed %></p>
+            <% for (const stats in pokemonId.stats) {%>
+                <p>
+                    <%=stats%>: <%=pokemonId.stats[stats]%>
+                </p>
+                <% } %>
         </div>
     </div>
 </body>
+
 </html>
