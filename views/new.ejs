@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <a href="/pokemons"><img class="arrow" src="/img/arrow.png" width="20px"></a>
+    <div class="newcontainer">
+        <h2>Add a New Pokémon</h2>
+        <form action="/pokemons/" method="POST">
+            <input class="newpage" type="text" name="name" placeholder="Name"/>
+            <input class="newpage" type="text" name="type" placeholder="Type(seperate by commas)"/>
+            <input class="newpage" type="number" name="hp" placeholder="HP"/>
+            <input class="newpage" type="number" name="attack" placeholder="Attack"/>
+            <input class="newpage" type="number" name="defense" placeholder="Defense"/>
+            <input class="newpage" type="number" name="spattack" placeholder="Spattack"/>
+            <input class="newpage" type="number" name="spdefense" placeholder="Spdefense"/>
+            <input class="newpage" type="number" name="speed" placeholder="Speed"/><br/>
+            <input class="submit-button" type="submit" value="ADD POKEMON" />
+        </form>
+    </div>
+</body>
+</html>

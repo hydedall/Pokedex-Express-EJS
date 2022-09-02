@@ -2,7 +2,7 @@
 //SETTING DEPENDENCIES
 ///////////////
 const express = require('express');
-const fruits = require("./models/fruits.js")
+const fruits = require("./models/pokemon.js")
 const methodOverride = require("method-override")
 
 
