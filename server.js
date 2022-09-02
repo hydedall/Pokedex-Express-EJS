@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
 app.get("/" , function (req, res){
-  res.send(`Search your favorite Pokemon!, visit <a href="/pokemon"> /pokemon. </a>`)
+  res.send(`Search your favorite Pokemon!, visit <a href="/pokemons"> /pokemons. </a>`)
 })
 
 ///////////////
@@ -56,6 +56,7 @@ app.get("/pokemons/new", (req, res) => {
 //gets info from the new.ejs file. a form was made to allow a user to create a new fruit
 app.get("/pokemons/new", (req, res) => {
   res.render("new.ejs"), {
+    pokedex: pokemons,
     tabTitle: "New"
   }
 });

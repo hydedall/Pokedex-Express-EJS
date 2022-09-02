@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<%- include("./partials/head.ejs") %>
-<%- include("./partials/header.ejs") %>
-    <body>
-        <div>
-            <form class="button" action="/pokemons/new">
-                <input class="add-button" type="submit" value="ADD POKEMON"/>
+<html>
+<link rel="stylesheet" href="/style.css">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pokedex</title>
+</head>
+
+<body>
+    <div id="header">
+        <%- include('./partials/header.ejs')%>
+    </div>
+    <h1>Pokedex</h1>
+    <a href="/pokemons/new">New Pokemon</a><br />
+    <div id="items">
+        <% for (i=0; i < pokedex.length; i++) { %>
+            <h2>
+                <%=pokedex[i].name%> | ID:<%=pokedex[i].id%>
+            </h2>
+            <a href="/pokemons/<%=i%>"><img src="<%=pokedex[i].img%>"></a>
+            <form action="/pokemons/<%=i%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE" />
             </form>
-            <form class="button">
-                <input class="search-field" type="search" id="search-pokemon" onkeyup="searchFunction()" placeholder="Search for Pokémon">
-            </form>
-        </div>
-            <div class="flex-container">
-                <% for(let i=0; i <data.length; i++){ %>
-                    <div class="cards">
-                        <a href="/pokemons/<%= i %>">
-                            <div class="card">
-                                <img class="pokemon-img" src="<%=data[i].img%>">
-                                <h4><%=data[i].name%></h4>
-                            </div>
-                        </a>
-                    </div>
-                <% } %>
-            </div>
-    </body>
+            <a href="/pokemons/<%=i%>/edit">Edit</a>
+            <% } %>
+    </div>
+</body>
+
 </html>
