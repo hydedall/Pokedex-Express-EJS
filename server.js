@@ -116,3 +116,8 @@ app.get("/pokemons/:id", (req, res) => {
 app.listen(port, () => {
   console.log("Welcome to the world of Pokemon!")
 });
+
+// spent most of the night trying to fix my nodemon, and then spent most of
+// the night trying to fix the "Cannot GET /pokemons" and to be honest it's probably just my code
+// this week has made me feel incredibly stupid, and I will probably need to go over all
+// the lectures and labs again. Feeling like a failure.
