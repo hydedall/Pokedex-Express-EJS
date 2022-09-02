@@ -10,7 +10,7 @@ const methodOverride = require("method-override")
 //INITIALIZING EXPRESS
 ///////////////
 const app = express();
-// const port = 3000;
+const port = 3000;
 
 
 //MIDDLEWARE
@@ -119,6 +119,6 @@ app.get("/pokemons/:id", (req, res)=>{
 });
 
 //ROUTE LISTENER
-app.listen(3000, ()=>{
+app.listen(3000, (PORT)=>{
   console.log("Welcome to the world of Pokemon!")
 });
